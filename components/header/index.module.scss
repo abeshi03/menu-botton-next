@@ -1,0 +1,88 @@
+.header {
+  h1 {
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .hamburger {
+    @media (min-width: 769px) {
+      display: none;
+    }
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 32px;
+    right: 15px;
+
+    span {
+      width: 30px;
+      height: 5px;
+      background: black;
+      border: solid 1px black {
+        radius: 5px;
+      }
+      display: block;
+      position: absolute;
+      transition: 1s;
+      opacity: 1;
+
+      &:nth-of-type(1) {
+        top: 5px;
+      }
+      &:nth-of-type(2) {
+        top: 15px;
+      }
+      &:nth-of-type(3) {
+        top: 25px;
+      }
+    }
+
+    &.gray {
+      opacity: 0.5;
+    }
+  }
+  .menuIcon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .drawerMenu {
+    width: 100%;
+    color: white;
+    background-color: rgba($color: #000000, $alpha: 0.9);
+    position: fixed;
+    top: 0;
+
+    transition: 0.5s;
+    height: 0vh;
+    opacity: 0;
+    z-index: -1;
+    &.open {
+      height: 100vh;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    h2 {
+      margin: 50px;
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 30px;
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      margin: 100px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
