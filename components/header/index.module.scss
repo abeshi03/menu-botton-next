@@ -1,26 +1,19 @@
 .header {
-  h1 {
-    margin: 0;
-    padding: 20px 0;
-  }
+  height: 100px;
 
   .hamburger {
-    @media (min-width: 769px) {
-      display: none;
-    }
     width: 30px;
     height: 30px;
     position: fixed;
     top: 32px;
     right: 15px;
+    cursor: pointer;
 
     span {
-      width: 30px;
-      height: 5px;
+      width: 35px;
+      height: 2px;
       background: black;
-      border: solid 1px black {
-        radius: 5px;
-      }
+      border: solid 1px black;
       display: block;
       position: absolute;
       transition: 1s;
@@ -32,13 +25,12 @@
       &:nth-of-type(2) {
         top: 15px;
       }
-      &:nth-of-type(3) {
-        top: 25px;
-      }
     }
-
-    &.gray {
-      opacity: 0.5;
+    p {
+      display: inline-block;
+      top: 30px;
+      font-size: 15px;
+      margin-top: 20px;
     }
   }
   .menuIcon {
@@ -49,7 +41,7 @@
   .drawerMenu {
     width: 100%;
     color: white;
-    background-color: rgba($color: #000000, $alpha: 0.9);
+    background-color: black;
     position: fixed;
     top: 0;
 
