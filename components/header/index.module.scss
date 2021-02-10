@@ -1,80 +1,172 @@
 .header {
-  height: 100px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 0 40px;
+  z-index: 50;
+  position: fixed;
+  .logo {
+    font-size: 20px;
+  }
 
-  .hamburger {
-    width: 30px;
-    height: 30px;
-    position: fixed;
-    top: 32px;
-    right: 15px;
-    cursor: pointer;
+  nav {
+    margin-left: auto;
+  }
+  li {
+    display: inline-block;
+    margin-right: 15px;
 
-    span {
-      width: 35px;
-      height: 2px;
-      background: black;
-      border: solid 1px black;
-      display: block;
-      position: absolute;
-      transition: 1s;
-      opacity: 1;
-
-      &:nth-of-type(1) {
-        top: 5px;
-      }
-      &:nth-of-type(2) {
-        top: 15px;
-      }
-    }
-    p {
-      display: inline-block;
-      top: 30px;
-      font-size: 15px;
-      margin-top: 20px;
+    &:nth-child(6) {
+      background-color: rgb(34, 35, 35);
+      color: white;
+      width: 90px;
+      padding: 5px 10px;
+      margin-right: 0;
     }
   }
-  .menuIcon {
-    &:hover {
-      cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    position: initial;
+    nav {
+      display: none;
+    }
+  }
+}
+
+.humburger {
+  background-color: rgb(34, 35, 36);
+  color: white;
+  padding: 10px 5px 0 5px;
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  span {
+    background-color: white;
+    width: 30px;
+    height: 1px;
+    display: block;
+    margin-bottom: 7px;
+    &:nth-child(1) {
+      width: 20px;
+      margin-left: 10px;
+    }
+  }
+  p {
+    font-size: 13px;
+    margin-top: -4px;
+    margin-bottom: 5px;
+  }
+}
+.drawerMenu {
+  width: 0;
+  color: white;
+  background-color: rgb(34, 35, 36);
+
+  transition: 0.5s;
+  height: 0;
+  opacity: 0;
+  z-index: -100;
+  &.open {
+    height: 100vh;
+    opacity: 1;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 20px;
+    .logo {
+      margin-top: 25px;
+    }
+  }
+  .container {
+    margin: 0 0 0 auto;
+    .humburger {
+      display: block;
     }
   }
   .drawerMenu {
     width: 100%;
-    color: white;
-    background-color: black;
     position: fixed;
     top: 0;
-
-    transition: 0.5s;
-    height: 0vh;
-    opacity: 0;
-    z-index: -1;
-    &.open {
-      height: 100vh;
-      opacity: 1;
-      z-index: 1;
-    }
-
-    h2 {
-      margin: 50px;
-    }
-
     ul {
-      padding: 0;
-      list-style: none;
-
+      width: 90%;
+      margin: 0 auto;
       li {
-        margin: 30px;
-        text-decoration: underline;
+        margin-bottom: 25px;
+        opacity: 0.8;
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 200;
       }
     }
-
-    p {
-      margin: 100px;
-
-      &:hover {
-        cursor: pointer;
+  }
+  .mobileLogo {
+    width: 250px;
+    height: 80px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+  }
+  .mainTitle {
+    font-size: 28px;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+  }
+  .subTitle {
+    font-size: 15px;
+  }
+  .close {
+    cursor: pointer;
+    margin-top: 28px;
+    padding-right: 5px;
+    span {
+      background-color: white;
+      width: 30px;
+      height: 1px;
+      display: block;
+      margin-bottom: 10px;
+      margin: 0 0 10px auto;
+      &:first-child {
+        transform: translateY(6px) rotate(150deg);
       }
+      &:nth-child(2) {
+        transform: translateY(-6px) rotate(-150deg);
+        margin-bottom: 0;
+      }
+    }
+    p {
+      text-align: right;
+      font-size: 11px;
+      padding-right: 1px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    padding: 0 20px;
+  }
+  .humburger {
+    top: 15px;
+    right: 20px;
+  }
+  .mobileLogo {
+    width: 190px;
+    height: 60px;
+    top: 10px;
+  }
+}
+@media (max-width: 340px) {
+  .header {
+    padding: 0 10px;
+    .logo {
+      width: 170px;
+      height: 60px;
     }
   }
 }
